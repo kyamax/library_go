@@ -27,9 +27,9 @@ _6.0.0_
 ## usersテーブル(devise)
 |column            |type   |option     |
 |------------------|-------|-----------|
-|grade             |integer|null: false|
-|class             |integer|null: false|
-|number            |integer|null: false|
+|grade_id          |integer|null: false|
+|class_id          |integer|null: false|
+|number_id         |integer|null: false|
 |name              |string |null: false|
 |encrypted_password|string |null: false|
 
