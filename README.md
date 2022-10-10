@@ -38,7 +38,7 @@ has_many :posts
 has_many :likes
 
 
-## postsテーブル
+## booksテーブル
 |column            |type       |option                        |
 |------------------|-----------|------------------------------|
 |book_name         |string     |null: false                   | 
@@ -46,12 +46,13 @@ has_many :likes
 |publisher         |string     |                              |
 |text              |text       |                              |
 |user              |references |null: false, foreign_key: true|
+|genre_id          |integer    |null: false                   |
 
 ### Association
 belongs_to :user
 has_many :likes
 
-## likeテーブル
+## likesテーブル
 |column            |type       |option                        |
 |------------------|-----------|------------------------------|
 |user              |references |null: false, foreign_key: true|
@@ -61,3 +62,10 @@ has_many :likes
 belongs_to :user
 belongs_to :post
 
+## categoriesテーブル
+|column            |type       |option                        |
+|------------------|-----------|------------------------------|
+|genre             |integer    |null: false                   |
+
+### Association
+belongs_to :book
