@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   
   extend ActiveHash::Associations::ActiveRecordExtensions
   validates :name, presence: true
@@ -14,4 +15,5 @@ class User < ApplicationRecord
   belongs_to :grade
   belongs_to :class_num
   belongs_to :number
+
 end
