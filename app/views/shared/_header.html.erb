@@ -1,0 +1,20 @@
+<header class='top-page-header'>
+  <div class="header">
+    <div class="left-header">
+      <%= link_to "library go", root_path%>
+    </div>
+    <div class="right-header">
+      <% if user_signed_in? %>
+        <div class="nav__right">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
+          <%= link_to "新規投稿", new_book_path, class: :navi__btn %>
+        </div>
+      <% else %>
+        <div class="nav__right">
+          <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+          <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</header>
