@@ -1,0 +1,69 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@user.name}さんの情報"%>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">名前</th>
+            <td class="table__col2"><%= @user.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">学年</th>
+            <td class="table__col2"><%= @user.grade.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">クラス</th>
+            <td class="table__col2"><%= @user.class_num.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">番号</th>
+            <td class="table__col2"><%= @user.number.name %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="right-header">
+        <div class="nav__right">
+         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
+        </div>
+      </div>
+      
+      <h2 class="page-heading">
+        <%= "#{@user.name}さんの投稿一覧"%>
+      </h2>
+      <div class="user__card">
+        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
+        <%# <%= render partial: "prototypes/prototype", collection: @prototypes %>
+        <div class="book-field">
+          <% @books.each do |book| %>
+            <div class="book-item">
+              <%= link_to book_path(book.id) do %>
+                <div class="book">
+                  <% if book.image.present? %>
+                    <%= image_tag book.image, class:"book-img" %>
+                  <% end %>
+                  <div class="book-name">
+                    本の名前：<%= book.book_name %>
+                  </div>
+                  <div class="book-author">
+                    著者：<%= book.author %>
+                  </div>
+                  <div class="book-genre">
+                    ジャンル：<%= book.genre.name %>
+                  </div>
+                </div>
+              <% end %>
+              <div class='star-btn'>
+                <%= image_tag "star.png", class:"star-icon" %>
+                <span class='star-count'>0</span>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

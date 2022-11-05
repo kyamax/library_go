@@ -19,6 +19,11 @@
   </div>
 </div>
 
+<% if user_signed_in? && current_user.id == @book.user_id %>
+  <%= link_to "編集", edit_book_path(@book.id) %>
+  <%= link_to "削除", book_path(@book.id), method: :delete %>
+<% end %>
+
 <div class="book__comments">
   <% if user_signed_in? %>
     <%= form_with(model: [@book, @comment], local: true) do |f| %>
@@ -35,7 +40,7 @@
     <% @comments.each do |comment| %>
       <li class="comments_list">
         <%= comment.content %>
-        <%= link_to "（#{comment.user.name}）", root_path, class: :comment_user %>
+        <%= link_to "（#{comment.user.name}）", user_path(comment.user), class: :comment_user %>
       </li>
     <% end %>
   </ul>

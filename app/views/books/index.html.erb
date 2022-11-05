@@ -1,21 +1,30 @@
 <div class="book-field">
   <% @books.each do |book| %>
-    <%= link_to book_path(book.id) do %>
-      <div class="book">
-        <% if book.image.present? %>
-          <%= image_tag book.image, class:"book-img" %>
-        <% end %>
-        <div class="book-name">
-          本の名前：<%= book.book_name %>
-        </div>
-        <div class="book-author">
-          著者：<%= book.author %>
-        </div>
-        <div class="book-genre">
-          ジャンル：<%= book.genre.name %>
-        </div>
+    <div class="book-item">
+      <div class="book-user">
+        <%= link_to book.user.name, user_path(book.user)%>
       </div>
-    <% end %>
+      <%= link_to book_path(book.id) do %>
+        <div class="book">
+          <% if book.image.present? %>
+            <%= image_tag book.image, class:"book-img" %>
+          <% end %>
+          <div class="book-name">
+            本の名前：<%= book.book_name %>
+          </div>
+          <div class="book-author">
+            著者：<%= book.author %>
+          </div>
+          <div class="book-genre">
+            ジャンル：<%= book.genre.name %>
+          </div>
+        </div>
+      <% end %>
+      <div class='star-btn'>
+        <%= image_tag "star.png", class:"star-icon" %>
+        <span class='star-count'>0</span>
+      </div>
+    </div>
   <% end %>
 </div>
 

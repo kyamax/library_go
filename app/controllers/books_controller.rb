@@ -21,9 +21,30 @@ class BooksController < ApplicationController
     @comment = Comment.new
     @comments = @book.comments
   end
-    private
 
-    def book_params
-      params.require(:book).permit(:image, :book_name, :author, :publisher, :text, :genre_id).merge(user_id: current_user.id)
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
+      redirect_to book_path
+    else
+      render :edit
     end
+  end
+
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to root_path
+  end
+
+
+  private
+
+  def book_params
+    params.require(:book).permit(:image, :book_name, :author, :publisher, :text, :genre_id).merge(user_id: current_user.id)
+  end
 end
