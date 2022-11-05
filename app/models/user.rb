@@ -18,4 +18,11 @@ class User < ApplicationRecord
   belongs_to :class_num
   belongs_to :number
 
+  def email_required?
+    false
+  end
+  def email_changed?
+    false
+  end
+
 end
