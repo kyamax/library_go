@@ -52,6 +52,17 @@ has_many :likes
 belongs_to :user
 has_many :likes
 
+## commentsテーブル
+|column            |type       |option                        |
+|------------------|-----------|------------------------------|
+|content           |text       |null: false                   |
+|user              |references |null: false, foreign_key: true|
+|book              |references |null: false, foreign_key: true|
+
+### Association
+belongs_to :user
+belongs_to :book
+
 ## likesテーブル
 |column            |type       |option                        |
 |------------------|-----------|------------------------------|

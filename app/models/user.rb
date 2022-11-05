@@ -13,6 +13,7 @@ class User < ApplicationRecord
   validates :number_id, numericality: { other_than: 1, message: "can't be blank" }
 
   has_many :books
+  has_many :comments
   belongs_to :grade
   belongs_to :class_num
   belongs_to :number

@@ -1,20 +1,20 @@
-<%= render "shared/header" %>
-<div class="book">
+<div class="book-field">
   <% @books.each do |book| %>
-    <% if book.image.present? %>
-      <%= image_tag book.image, class:"book-img" %>
+    <%= link_to book_path(book.id) do %>
+      <div class="book">
+        <% if book.image.present? %>
+          <%= image_tag book.image, class:"book-img" %>
+        <% end %>
+        <div class="book-name">
+          本の名前：<%= book.book_name %>
+        </div>
+        <div class="book-author">
+          著者：<%= book.author %>
+        </div>
+        <div class="book-genre">
+          ジャンル：<%= book.genre.name %>
+        </div>
+      </div>
     <% end %>
-    <div class="book-name">
-     <%= book.book_name %>
-    </div>
-    <div class="book-author">
-      <%= book.author %>
-    </div>
-    <div class="book-publisher">
-      <%= book.publisher %>
-    </div>
-    <div class="book-genre">
-      <%= book.genre.name %>
-    </div>
   <% end %>
 </div>
