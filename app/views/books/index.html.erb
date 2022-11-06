@@ -20,10 +20,15 @@
           </div>
         </div>
       <% end %>
-      <div class='star-btn'>
-        <%= image_tag "star.png", class:"star-icon" %>
-        <span class='star-count'>0</span>
-      </div>
+      <%# <div class='star-btn'> %>
+        <%# <%= image_tag "star.png", class:"star-icon" %>
+        <%# <span class='star-count'>0</span> %>
+      <%# </div> %>
+      <% if user_signed_in? %>
+        <div id="like_buttons_<%= book.id %>">
+          <%= render partial: "likes/like", locals: { book: book } %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>

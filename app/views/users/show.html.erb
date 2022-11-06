@@ -30,7 +30,7 @@
          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
         </div>
       </div>
-      
+
       <h2 class="page-heading">
         <%= "#{@user.name}さんの投稿一覧"%>
       </h2>
@@ -56,14 +56,59 @@
                   </div>
                 </div>
               <% end %>
-              <div class='star-btn'>
-                <%= image_tag "star.png", class:"star-icon" %>
-                <span class='star-count'>0</span>
-              </div>
+              <% if user_signed_in? %>
+                <div id="like_buttons_<%= book.id %>">
+                  <%= render partial: "likes/like", locals: { book: book } %>
+                </div>
+              <% end %>
             </div>
           <% end %>
         </div>
       </div>
+
+      <% if user_signed_in? && current_user.id == @user.id %>
+        <h2 class="page-heading">
+          <%= "#{@user.name}さんのいいね一覧"%>
+        </h2>
+        <div class="user-like">
+          <% if @likes.present? %>
+            <% @likes.each do |like| %>
+              <% book = like.book %>
+              <div class="book-item">
+                <div class="book-user">
+                  <%= link_to book.user.name, user_path(book.user)%>
+                </div>
+                <%= link_to book_path(book.id) do %>
+                  <div class="book">
+                    <% if book.image.present? %>
+                      <%= image_tag book.image, class:"book-img" %>
+                    <% end %>
+                    <div class="book-name">
+                      本の名前：<%= book.book_name %>
+                    </div>
+                    <div class="book-author">
+                      著者：<%= book.author %>
+                    </div>
+                    <div class="book-genre">
+                      ジャンル：<%= book.genre.name %>
+                    </div>
+                  </div>
+                <% end %>
+                <%# <div class='star-btn'> %>
+                  <%# <%= image_tag "star.png", class:"star-icon" %>
+                  <%# <span class='star-count'>0</span> %>
+                <%# </div> %>
+                <% if user_signed_in? %>
+                  <div id="like_buttons_<%= book.id %>">
+                    <%= render partial: "likes/like", locals: { book: book } %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+      
     </div>
   </div>
 </div>
