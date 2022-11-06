@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     else
       @book = @comment.book
       @comments = @book.comments
-      render "prototypes/show"
+      render "books/show"
     end
   end
 

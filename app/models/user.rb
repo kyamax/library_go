@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   has_many :books
   has_many :comments
+  has_many :likes
   belongs_to :grade
   belongs_to :class_num
   belongs_to :number
