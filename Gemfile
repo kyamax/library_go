@@ -64,3 +64,5 @@ gem "image_processing", "~> 1.2"
 gem "rack-cors"
 
 gem "jquery-rails"
+
+gem 'rails_admin', '~> 3.0'
