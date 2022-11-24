@@ -37,46 +37,131 @@ a {
 
 /* ヘッダーcss */
 .top-page-header {
-  background-color: #6495ed;
-  margin-bottom: 48px;
+  background-color: rgb(100, 100, 100) ;
+  /* margin-bottom: 48px; */
   padding: 20px 20px;
 }
 .header{
   display: flex;
   justify-content: space-between;
 }
+
+.left-header{
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.logo{
+  color: #fff;
+}
+
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #fff ;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #fff solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 .nav__btn:hover{
-  color: #fff;
-  background: #87CEFA;
+  color: #3b4043;
+  background: #fff;
 }
 /* ヘッダーcss */
 
+/* トップページ */
+.top-img{
+  background-size: cover;
+  filter: brightness(120%);
+}
+.start-page{
+  position: relative;
+}
+/* .top-text{
+  position: absolute;
+  top: 25px;
+  left: 25px;
+} */
+
+.greeting{
+  position: absolute;
+  top: 120px;
+  left: 150px;
+  font-size: 25px;
+}
+
+.start-account{
+  position: absolute;
+  top: 300px;
+  left: 150px;
+}
+
+.account_btn{
+  display: inline-block;
+  padding: 0.9em 5.1em;
+  font-size: 0.8em;
+  color: #3b4043 ;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #3b4043 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+.account_btn:hover{
+  color: #fff;
+  background: #3b4043;
+}
+
+/* トップページ */
+
 /* ボディ */
 body{
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
 }
 /* ボディ */
 
 /* 本の投稿 */
+.book-wrapper{
+  width: 50%;
+  background-color: white;
+  padding-bottom: 70px;
+  margin: 0 auto;
+}
+
 .book-field {
-  width: calc((100% - 50px) / 4);
+  width: 700px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: calc(100vh - 161px);
+}
+
+.book-item{
+  /* width: calc((100% - 100px) / 2); */
+  /* width: calc(100% - 100px); */
+  width: 100%;
+  margin: 20px 100px;
+  padding: 15px 30px;
+  background-color: #ffffff ;
+  border-bottom: 1px solid #999 ;
 }
 
 .book{
-  margin-bottom: 40px;
-  background-color: #f8f8f8;
+  display: flex;
+  justify-content: space-between;
 }
+
+.book-user{
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+
 .book-img{
   width: 28vh;
   height: 33vh;
@@ -89,6 +174,7 @@ body{
   font-size: 20px;
   margin-bottom: 8px;
   font-weight: bold;
+  width: 250px;
 }
 .book-publisher {
   font-size: 16px;
