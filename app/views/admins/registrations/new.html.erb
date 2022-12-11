@@ -1,6 +1,4 @@
-<%# <%= render "shared/second-header"%> 
-
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @admin, url: admin_registration_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
@@ -21,26 +19,10 @@
 
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">学年</label>
+      <label class="form-text">職員番号</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"select-box", id:"user-grade"}) %>
-  </div>
-
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">クラス</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <%= f.collection_select(:class_num_id, ClassNum.all, :id, :name, {}, {class:"select-box", id:"user-class"}) %>
-  </div>
-
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">番号</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <%= f.collection_select(:number_id, Number.all, :id, :name, {}, {class:"select-box", id:"user-number"}) %>
+    <%= f.text_area :employee_id, class:"input-default", id:"employee-id", placeholder:"職員番号" %>
   </div>
 
   <div class="form-group">
@@ -93,11 +75,10 @@
     </h2>
   </div>
   <div class='register-btn'>
-    <%= devise_error_messages! %>
-    <%= f.submit "会員登録" ,class:"register-red-btn" %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <%# <%= devise_error_messages! %>
+    <%= f.submit "登録する" ,class:"register-red-btn" %>
   </div>
   <p class='register-info'>本人情報の登録について</p>
 </div>
 <% end %>
-
-<%# <%= render "shared/second-footer"%> 
