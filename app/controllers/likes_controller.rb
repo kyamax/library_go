@@ -1,15 +1,32 @@
 class LikesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_likes
 
   def create
-    @book = Book.find(params[:book_id])
-    like = current_user.likes.new(book_id: @book.id)
-    like.save
+    if user_signed_in?
+      like = current_user.likes.new(book_id: @book.id)
+      like.save
+    elsif admin_signed_in?
+      like = current_admin.likes.new(book_id: @book.id)
+      like.save
+    end
   end
 
   def destroy
-    @book = Book.find(params[:book_id])
-    like = current_user.likes.find_by(book_id: @book.id)
-    like.destroy
+    if user_signed_in?
+      like = current_user.likes.find_by(book_id: @book.id)
+      like.destroy
+    elsif admin_signed_in?
+      like = current_admin.likes.find_by(book_id: @book.id)
+      like.destroy
+    end
   end
+
+  private
+
+  def set_likes
+    @book = Book.find(params[:book_id])
+    @id_name = "#like-link-#{@book.id}"
+  end
+
 end
