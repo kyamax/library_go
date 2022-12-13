@@ -1,0 +1,81 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@admin.name}さんの情報"%>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">名前</th>
+            <td class="table__col2"><%= @admin.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">職員番号</th>
+            <td class="table__col2"><%= @admin.employee_id %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <% if admin_signed_in? && current_admin.id == @admin.id %>
+        <div class="show-btn">
+          <div class="nav__right">
+            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: :detail_nav__btn %>
+          </div>
+          <div class="nav__right">
+            <%= link_to "登録情報の編集", edit_admin_registration_path, method: :get, class: :detail_nav__btn %>
+          </div>
+          <div class="nav__right">
+            <%= link_to "管理者ページ", admins_path, method: :get, class: :detail_nav__btn %>
+          </div>
+        </div>
+      <% end %>
+
+      <h2 class="page-heading">
+        <%= "#{@admin.name}さんの投稿一覧"%>
+      </h2>
+
+      <div class="user__card">
+        <div class="user-book-field">
+          <% @books.each do |book| %>
+            <div class="user-book-item">
+              <%= link_to book_path(book.id) do %>
+                <div class="detail-book">
+                  <% if book.image.present? %>
+                    <%= image_tag book.image, class:"detail-book-img" %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <% if admin_signed_in? && current_admin.id == @admin.id %>
+        <h2 class="page-heading">
+          <%= "#{@admin.name}さんのいいね一覧"%>
+        </h2>
+
+        <div class="user-like">
+          <% if @likes.present? %>
+            <div class="user-book-field">
+              <% @likes.each do |like| %>
+                <% book = like.book %>
+                <div class="user-book-item">
+                  <%= link_to book_path(book.id) do %>
+                  <div class="detail-book">
+                    <% if book.image.present? %>
+                      <%= image_tag book.image, class:"detail-book-img" %>
+                    <% end %>
+                  </div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
