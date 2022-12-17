@@ -10,7 +10,6 @@ require("channels")
 require("../search")
 //= require jquery
 //= require rails-ujs
-// require_tree ./rails_admin
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
