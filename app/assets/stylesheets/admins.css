@@ -1,0 +1,21 @@
+.user-lists{
+  display: block;
+  justify-content: center;
+}
+
+.user-list{
+  margin: 0 auto;
+  width: 1000px;
+  background-color: #ffffff;
+  /* width: calc(100% - 40px); */
+  /* margin: 0 20px 0 20px; */
+}
+
+.list-title{
+  background-color: #999;
+  color: #ffffff;
+}
+
+.list-detail{
+  text-align: center;
+}

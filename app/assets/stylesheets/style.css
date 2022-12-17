@@ -116,6 +116,19 @@ a {
   background: #3b4043;
 }
 
+.timeline{
+  font-size: 20px;
+}
+
+.timeline_btn{
+  margin: 0 10px;
+}
+
+.timeline_btn:hover{
+  border-bottom: solid 3px #999;
+  padding-bottom: 5px;
+}
+
 /* トップページ */
 
 /* ボディ */
@@ -124,32 +137,33 @@ body{
 }
 /* ボディ */
 
-/* 本の投稿 */
+/* 本の一覧 */
 .book-wrapper{
   width: 50%;
-  background-color: white;
+  /* background-color: white; */
   padding-bottom: 70px;
   margin: 0 auto;
 }
 
 .book-field {
-  width: 700px;
-  margin: 0 auto;
+  width: 100%;
+  /* margin: 0 auto; */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  min-height: calc(100vh - 161px);
+  /* min-height: calc(100vh - 161px); */
 }
 
 .book-item{
   /* width: calc((100% - 100px) / 2); */
   /* width: calc(100% - 100px); */
   width: 100%;
-  margin: 20px 100px;
-  padding: 15px 30px;
+  margin: 10px 10px;
+  padding: 20px 60px;
   background-color: #ffffff ;
-  border-bottom: 1px solid #999 ;
+  border: 1px solid #f5f5f5 ;
+  border-radius: 5px;
 }
 
 .book{
@@ -162,9 +176,14 @@ body{
   font-size: 18px;
 }
 
+.book_user_name:hover{
+  color: #999;
+}
+
 .book-img{
   width: 28vh;
   height: 33vh;
+  margin: 10px 0 10px 0;
 }
 .book-author {
   margin-bottom: 16px;
@@ -172,7 +191,7 @@ body{
 .book-name {
   display: block;
   font-size: 20px;
-  margin-bottom: 8px;
+  margin: 15px 0 8px 0;
   font-weight: bold;
   width: 250px;
 }
@@ -183,6 +202,128 @@ body{
   display: block;
   font-size: 12px;
   color: #999;
+}
+/* 本の一覧 */
+
+/* 本の詳細ページ */
+.detail-post{
+  width: 1000px;
+  margin: 0 auto;
+  padding: 15px 30px;
+  background-color: #ffffff ;
+}
+
+.detail_nav__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #3b4043 ;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #3b4043 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+.detail_nav__btn:hover{
+  color: #ffffff;
+  background: #3b4043;
+}
+
+.book-user{
+  font-size: 18px;
+  border-bottom: 5px solid #f5f5f5;
+}
+
+.detail-book{
+  display: flex;
+  border-bottom: 5px solid #f5f5f5;
+  margin-bottom: 20px;
+  padding: 15px 0 15px 0;
+}
+
+.detail-book-overview{
+  width: 100%;
+  margin-left: 30px;
+}
+
+.detail-book-img{
+  width: 30vh;
+  height: 40vh;
+  margin: 10px 0 10px 0;
+}
+.detail-book-author {
+  margin-bottom: 16px;
+}
+.detail-book-name {
+  display: block;
+  font-size: 24px;
+  margin: 20px 0 8px 0;
+  font-weight: bold;
+  width: 400px;
+}
+.detail-book-publisher {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.detail-book-genre {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #999;
   text-decoration: underline;
 }
+.book-text{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+
+/* 本の詳細ページ */
+
+/* 本の投稿 */
+.form-field{
+  min-height: calc(100vh - 161px);
+  display: block;
+  text-align: center;
+}
+
+.field{
+  margin: 30px 0 ;
+  height: 50px;
+}
+
+.field label{
+  font-size: 20px;
+}
+
+.form__text{
+  height: 30px;
+  width: 300px;
+}
+
+.form__text_area{
+  height: 50px;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.form__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background: #3b4043;
+  /* border: 1px #87CEFA solid; */
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
+}
+
+.form__btn:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
 /* 本の投稿 */
