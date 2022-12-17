@@ -1,0 +1,46 @@
+<div class='search'>
+  <h1 class='title'>児童・生徒検索</h1>
+  <%= search_form_for @user_search, url: search_admins_path, class: :search_form, html: {id: "detailed-search-form"} do |f| %>
+    <div class="search-field">
+      <%= f.text_field :school_cont, placeholder: '学校名', class: :search_book_form %>
+    </div>
+
+    <div class="search-field">
+      <%= f.label :grade_id_eq, '学年' %>
+      <%= f.collection_select(:grade_id_eq, Grade.all, :id, :name, {include_blank: "---"}, {class:"search_user_form"}) %>
+    </div>
+
+    <div class="search-field">
+      <%= f.label :class_num_id_eq, 'クラス' %>
+      <%= f.collection_select(:class_num_id_eq, ClassNum.all, :id, :name, {include_blank: "---"}, {class:"search_user_form"}) %>
+    </div>
+
+    <%= f.submit '検索', class:"search-btn" %>
+  <% end %>
+</div>
+
+<div class="user-lists">
+  <table class="user-list">
+    <tr class="list-title">
+      <th>学校名</th>
+      <th>学年</th>
+      <th>クラス</th>
+      <th>番号</th>
+      <th>名前</th>
+      <th>マイページ</th>
+      <th>削除</th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr class="list-detail">
+        <td><%= user.school %></td>
+        <td><%= user.grade.name %></td>
+        <td><%= user.class_num.name %></td>
+        <td><%= user.number.name %></td>
+        <td><%= user.name %></td>
+        <td><%= link_to "詳細", user_path(user.id) %></td>
+        <td><%= link_to "削除", user_registration_path, method: :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+
+</div>

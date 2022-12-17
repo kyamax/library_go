@@ -1,47 +1,42 @@
-<div class="book-field">
-  <% @books.each do |book| %>
-    <div class="book-item">
-      <div class="book-user">
-        <%= link_to book.user.name, user_path(book.user)%>
-      </div>
-      <%= link_to book_path(book.id) do %>
-        <div class="book">
-          <% if book.image.present? %>
-            <%= image_tag book.image, class:"book-img" %>
-          <% end %>
-          <div class="book-name">
-            本の名前：<%= book.book_name %>
-          </div>
-          <div class="book-author">
-            著者：<%= book.author %>
-          </div>
-          <div class="book-genre">
-            ジャンル：<%= book.genre.name %>
-          </div>
-        </div>
-      <% end %>
-      <%# <div class='star-btn'> %>
-        <%# <%= image_tag "star.png", class:"star-icon" %>
-        <%# <span class='star-count'>0</span> %>
-      <%# </div> %>
-      <% if user_signed_in? %>
-        <div id="like_buttons_<%= book.id %>">
-          <%= render partial: "likes/like", locals: { book: book } %>
-        </div>
-      <% end %>
+<% if user_signed_in? || admin_signed_in? %>
+  <div class="book-wrapper">
+    <%= render "shared/search" %>
+    
+    <%= render "shared/timeline" %>
+
+    <div class="book-field">
+      <%# <h1 class='title'>みんなの投稿</h1> %>
+      
+      <%= render partial: "shared/book", collection: @books %>
     </div>
-  <% end %>
-</div>
-
-<div class='p16'>
-  <h1 class='mb16'>本の検索</h1>
-
-  <input class='input bg-white mb16' type='search' id='$q' />
-  
-  <div>
-    <h2 class='mb8'>検索結果</h2>
-    <div id='$results'></div>
   </div>
-  
-  <script>${script}</script>
-</div>
+
+<% else %>
+  <div class="start-page" >
+    <div class="top-img">
+      <%= image_tag "book-toppage.jpg" %>
+    </div>
+    <div class="top-text">
+      <div class="greeting">
+        <h1>Library Go へようこそ！</h1>
+        <p>ー本の世界へ飛び出そうー</p>
+      </div>
+      <div class="start-account">
+        <div class="account-btn">
+          <h3 class="teacher">学校登録はこちら</h3>
+          <%= link_to "学校登録", new_admin_registration_path, class: :account_btn %>
+        </div>
+        <div class="account-btn">
+          <h3 class="teacher">先生はこちら</h3>
+          <%= link_to "ログイン", new_admin_session_path, class: :account_btn %>
+          <%= link_to "新規登録", new_admin_registration_path, class: :account_btn %>
+        </div>
+        <div class="account-btn">
+          <h3 class="student">児童・生徒はこちら</h3>
+          <%= link_to "ログイン", new_user_session_path, class: :account_btn %>
+          <%= link_to "新規登録", new_user_registration_path, class: :account_btn %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+<div class='search'>
+  <h1 class='title'>本の検索</h1>
+  <%= search_form_for @q, url: search_books_path, class: :search_form, html: {id: "detailed-search-form"} do |f| %>
+    <div class="search-field">
+      <%= f.text_field :book_name_cont, placeholder: '本の名前', class: :search_book_form %>
+    </div>
+
+    <div class="search-field">
+      <%= f.label :user_grade_id_eq, '学年' %>
+      <%= f.collection_select(:user_grade_id_eq, Grade.all, :id, :name, {include_blank: "---"}, {class:"search_user_form"}) %>
+    </div>
+
+    <div class="search-field">
+      <%= f.label :user_class_num_id_eq, 'クラス' %>
+      <%= f.collection_select(:user_class_num_id_eq, ClassNum.all, :id, :name, {include_blank: "---"}, {class:"search_user_form"}) %>
+    </div>
+
+    <%= f.submit '検索', class:"search-btn" %>
+  <% end %>
+</div>
