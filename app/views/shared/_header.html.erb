@@ -1,13 +1,18 @@
 <header class='top-page-header'>
   <div class="header">
     <div class="left-header">
-      <%= link_to "library go", root_path%>
+      <%= link_to "Library Go", root_path, class: :logo %>
     </div>
     <div class="right-header">
       <% if user_signed_in? %>
         <div class="nav__right">
           <%= link_to "マイページ", user_path(current_user.id), class: :nav__btn %>
-          <%= link_to "投稿する", new_book_path, class: :nav__btn %>
+          <%= link_to "記録する", new_book_path, class: :nav__btn %>
+        </div>
+      <% elsif admin_signed_in? %>
+        <div class="nav__right">
+          <%= link_to "マイページ", admin_path(current_admin.id), class: :nav__btn %>
+          <%= link_to "記録する", new_book_path, class: :nav__btn %>
         </div>
       <% else %>
         <div class="nav__right">

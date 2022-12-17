@@ -1,0 +1,28 @@
+<div class="book-item">
+  <div class="book-user">
+    <% if book.user.present? %>
+      <%= link_to book.user.name, user_path(book.user), class: :book_user_name %>
+    <% elsif book.admin.present? %>
+      <%= link_to book.admin.name, admin_path(book.admin), class: :book_user_name %>
+    <% end %>
+  </div>
+  <%= link_to book_path(book.id) do %>
+    <div class="book">
+      <div class="book-overview">
+        <div class="book-name">
+          <%= book.book_name %>
+        </div>
+        <div class="book-author">
+          著者：<%= book.author %>
+        </div>
+        <div class="book-genre">
+          ジャンル：<%= book.genre.name %>
+        </div>
+      </div>
+      <% if book.image.present? %>
+        <%= image_tag book.image, class:"book-img" %>
+      <% end %>
+    </div>
+  <% end %>
+  <%= render partial: "likes/like", locals: { book: book } %>
+</div>
