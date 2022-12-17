@@ -66,3 +66,7 @@ gem "rack-cors"
 gem "jquery-rails"
 
 gem "ransack"
+
+group :production do
+  gem 'pg'
+end

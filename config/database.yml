@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: library_go_production
-  username: library_go
-  password: <%= ENV['LIBRARY_GO_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
+
+  # database: library_go_production
+  # username: library_go
+  # password: <%= ENV['LIBRARY_GO_DATABASE_PASSWORD'] %>
