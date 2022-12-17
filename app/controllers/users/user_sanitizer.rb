@@ -1,5 +1,5 @@
 # class User::ParameterSanitizer < Devise::ParameterSanitizer
-class User::UserSanitizer < Devise::ParameterSanitizer
+class Users::UserSanitizer < Devise::ParameterSanitizer
 
   def initialize(*)
     super
