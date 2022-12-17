@@ -1,5 +1,4 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit]
   before_action :find_book, only: [:edit, :show, :update]
   before_action :book_search, only: [:index, :search]
 
