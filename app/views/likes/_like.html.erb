@@ -1,9 +1,17 @@
-<% if book.liked_by?(current_user) %>
-  <%= link_to book_likes_path(book), method: :delete, remote: true do %> 
-    ♥<%= book.likes.count %>いいね
+<div id="like-link-<%= book.id %>">
+  <% if user_signed_in? && book.user_liked_by?(current_user) %>
+    <%= link_to book_likes_path(book), method: :delete, remote: true do %> 
+      ♥<%= book.likes.count %>いいね
+    <% end %>
+
+  <% elsif admin_signed_in? && book.admin_liked_by?(current_admin) %>
+    <%= link_to book_likes_path(book), method: :delete, remote: true do %> 
+      ♥<%= book.likes.count %>いいね
+    <% end %>
+    
+  <% else %>
+    <%= link_to book_likes_path(book), method: :post, remote: true do %> 
+      ♡<%= book.likes.count %>いいね
+    <% end %>
   <% end %>
-<% else %>
-  <%= link_to book_likes_path(book), method: :post, remote: true do %> 
-    ♡<%= book.likes.count %>いいね
-  <% end %>
-<% end %>
+</div>
