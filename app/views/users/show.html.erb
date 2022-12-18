@@ -28,7 +28,7 @@
       <% if user_signed_in? && current_user.id == @user.id %>
         <div class="show-btn">
           <div class="nav__right">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :detail_nav__btn %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :detail_nav__btn %>
           </div>
         </div>
       <% end %>

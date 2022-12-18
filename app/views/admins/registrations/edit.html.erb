@@ -35,34 +35,12 @@
     </div>
   </div>
 
-  <%# <div class="form-group"> %>
-    <%# <div class='form-text-wrap'> %>
-      <%# <label class="form-text">メールアドレス</label> %>
-      <%# <span class="indispensable">必須</span> %>
-    <%# </div> %>
-    <%# <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
-  <%# </div> %>
-
   <div class="form-group">
-    <p class='form-info-header'>
-      本人確認
-    </p>
-    <p class='form-info-text'>
-      安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-    </p>
+    <div class='register-btn'>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <%# <%= devise_error_messages! %>
+      <%= f.submit "登録する" ,class:"register-red-btn" %>
+    </div>
   </div>
-  <div class="form-group">
-    <h2 class='form-bottom-text'>
-      「会員登録」のボタンを押すことにより、
-      <span>利用規約</span>
-      <br>に同意したものとみなします
-    </h2>
-  </div>
-  <div class='register-btn'>
-    <%= render "devise/shared/error_messages", resource: resource %>
-    <%# <%= devise_error_messages! %>
-    <%= f.submit "登録する" ,class:"register-red-btn" %>
-  </div>
-  <p class='register-info'>本人情報の登録について</p>
 </div>
 <% end %>
