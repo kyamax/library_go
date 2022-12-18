@@ -6,7 +6,7 @@ class Admin < ApplicationRecord
          authentication_keys: [:employee_id]
 
   validates :name, presence: true
-  validates :employee_id, presence: true
+  validates :employee_id, presence: true, numericality: {only_integer: true}
 
   has_many :books
   has_many :schools

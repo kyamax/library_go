@@ -13,10 +13,15 @@ RSpec.describe Admin, type: :model do
     end
 
     it 'employee_idが空では登録できない' do
-      binding.pry
       @admin.employee_id = ''
       @admin.valid?
       expect(@admin.errors.full_messages).to include("Employee can't be blank")
+    end
+
+    it 'employee_idが数字でなければ登録できない' do
+      @admin.employee_id = '123qwe'
+      @admin.valid?
+      expect(@admin.errors.full_messages).to include("Employee is not a number")
     end
 
     it 'passwordが空では登録できない' do
