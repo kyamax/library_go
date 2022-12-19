@@ -11,8 +11,6 @@ class BooksController < ApplicationController
   end
 
   def create
-    # user = User.find(params[:id])
-    # admin = Admin.find(params[:id])
     if user_signed_in?
       @book = Book.new(user_book_params)
     elsif admin_signed_in?
