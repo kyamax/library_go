@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_likes
+  before_action :set_likes, only: [:create, :destroy]
 
   def create
     if user_signed_in?
@@ -26,7 +26,7 @@ class LikesController < ApplicationController
 
   def set_likes
     @book = Book.find(params[:book_id])
-    @id_name = "#like-link-#{@book.id}"
+    @id_name = "#like_link_#{@book.id}"
   end
 
 end

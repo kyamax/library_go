@@ -24,5 +24,7 @@
       <% end %>
     </div>
   <% end %>
-  <%= render partial: "likes/like", locals: { book: book } %>
+  <div id="like_link_<%= book.id %>">
+    <%= render partial: "likes/like", locals: { book: book } %>
+  </div>
 </div>
