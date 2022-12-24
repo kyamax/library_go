@@ -1,1 +1,3 @@
-$('<%= @id_name %>').html("<%= j(render "likes/like", book: @book) %>");
+window.addEventListener('DOMContentLoaded', function(){
+  $('<%= @id_name %>').html("<%= j(render "likes/like", book: @book) %>");
+});
