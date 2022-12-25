@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_27_135401) do
+ActiveRecord::Schema.define(version: 2022_12_25_105923) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -62,6 +62,14 @@ ActiveRecord::Schema.define(version: 2022_11_27_135401) do
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
+  create_table "cities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "prefecture_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["prefecture_id"], name: "index_cities_on_prefecture_id"
+  end
+
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
     t.bigint "user_id", null: false
@@ -81,6 +89,13 @@ ActiveRecord::Schema.define(version: 2022_11_27_135401) do
     t.index ["admin_id"], name: "index_likes_on_admin_id"
     t.index ["book_id"], name: "index_likes_on_book_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_prefectures_on_name", unique: true
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -104,6 +119,7 @@ ActiveRecord::Schema.define(version: 2022_11_27_135401) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "books", "admins"
   add_foreign_key "books", "users"
+  add_foreign_key "cities", "prefectures"
   add_foreign_key "likes", "admins"
   add_foreign_key "likes", "books"
   add_foreign_key "likes", "users"
