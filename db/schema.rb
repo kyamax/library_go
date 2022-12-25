@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_25_105923) do
+ActiveRecord::Schema.define(version: 2022_12_25_142059) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -98,6 +98,16 @@ ActiveRecord::Schema.define(version: 2022_12_25_105923) do
     t.index ["name"], name: "index_prefectures_on_name", unique: true
   end
 
+  create_table "schools", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.bigint "prefecture_id", null: false
+    t.bigint "city_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_schools_on_city_id"
+    t.index ["prefecture_id"], name: "index_schools_on_prefecture_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "school", null: false
     t.integer "grade_id", null: false
@@ -123,4 +133,6 @@ ActiveRecord::Schema.define(version: 2022_12_25_105923) do
   add_foreign_key "likes", "admins"
   add_foreign_key "likes", "books"
   add_foreign_key "likes", "users"
+  add_foreign_key "schools", "cities"
+  add_foreign_key "schools", "prefectures"
 end
