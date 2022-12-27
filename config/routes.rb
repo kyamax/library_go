@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "books#index"
+  post 'set_cities', to: 'cities#set_cities'
+  
   resources :books, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resource :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
@@ -27,5 +29,6 @@ Rails.application.routes.draw do
     end
   end
   resources :schools, only: [:new, :create]
+  
 
 end
