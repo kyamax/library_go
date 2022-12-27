@@ -8,16 +8,6 @@
 
     <div class="form-group">
       <div class='form-text-wrap'>
-        <label class="form-text">学校名</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <div class='input-name-wrap'>
-        <%= f.text_area :name, class:"input-default", id:"school-name", placeholder:"学校名" %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class='form-text-wrap'>
         <label class="form-text">都道府県</label>
         <span class="indispensable">必須</span>
       </div>
@@ -38,6 +28,16 @@
           {{city.name}}
         </option>
       <% end %>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">学校名</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <div class='input-name-wrap'>
+        <%= f.text_area :name, class:"input-default", id:"school-name", placeholder:"学校名" %>
+      </div>
     </div>
 
     <div class="form-group">
