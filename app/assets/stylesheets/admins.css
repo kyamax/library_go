@@ -19,3 +19,9 @@
 .list-detail{
   text-align: center;
 }
+
+/* ユーザー検索 */
+.user-search-field{
+  margin-left: 100px;
+}
+/* ユーザー検索 */
