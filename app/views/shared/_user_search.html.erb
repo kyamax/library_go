@@ -1,0 +1,20 @@
+<div class='search'>
+  <h1 class='title'>児童・生徒検索</h1>
+  <%= search_form_for @user_search, url: search_admins_path, class: :search_form, html: {id: "detailed-search-form"} do |f| %>
+    <div class="search-field">
+      <%= f.text_field :school_cont, placeholder: '学校名', class: :search_book_form %>
+    </div>
+
+    <div class="search-field">
+      <%= f.label :grade_id_eq, '学年' %>
+      <%= f.collection_select(:grade_id_eq, Grade.all, :id, :name, {include_blank: "---"}, {class:"search_user_form"}) %>
+    </div>
+
+    <div class="search-field">
+      <%= f.label :class_num_id_eq, 'クラス' %>
+      <%= f.collection_select(:class_num_id_eq, ClassNum.all, :id, :name, {include_blank: "---"}, {class:"search_user_form"}) %>
+    </div>
+
+    <%= f.submit '検索', class:"search-btn" %>
+  <% end %>
+</div>
