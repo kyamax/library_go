@@ -17,7 +17,7 @@ class SchoolsController < ApplicationController
   private
 
   def school_params
-    params.require(:school).permit(:name).merge(prefecture: params[:prefecture_id], city: params[:city_id])
+    params.require(:school).permit(:name, :prefecture_id, :city_id)
   end
 
 end
