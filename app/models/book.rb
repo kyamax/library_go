@@ -8,7 +8,6 @@ class Book < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
 
-  validates :image, presence: true
   validates :book_name, presence: true
   validates :genre_id, numericality: { other_than: 1, message: "can't be blank" }
 

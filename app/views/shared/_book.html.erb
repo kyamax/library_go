@@ -21,6 +21,8 @@
       </div>
       <% if book.image.present? %>
         <%= image_tag book.image, class:"book-img" %>
+      <% else %>
+        <%= image_tag "book_image.png", class:"book-img" %>
       <% end %>
     </div>
   <% end %>

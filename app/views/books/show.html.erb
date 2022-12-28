@@ -14,6 +14,8 @@
   <div class="detail-book">
     <% if @book.image.present? %>
       <%= image_tag @book.image, class:"detail-book-img" %>
+    <% else %>
+        <%= image_tag "book_image.png", class:"detail-book-img" %>
     <% end %>
     <div class="detail-book-overview">
 
