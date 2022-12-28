@@ -8,7 +8,7 @@ class SchoolsController < ApplicationController
     @school = School.new(school_params)
     if @school.valid?
       @school.save
-      redirect_to root_path
+      redirect_to schools_path
     else
       render :new
     end
