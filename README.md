@@ -12,7 +12,7 @@ Library Go<br>
 児童・生徒・学校の教員
 
 # URL
-https://library-go.onrender.com/
+http://43.206.195.240/
 
 # テスト用アカウント
 ## 児童・生徒
@@ -22,7 +22,7 @@ https://library-go.onrender.com/
 パスワード：123qwe<br>
 
 ## 教員
-職員番号：123qwe<br>
+職員番号：123123<br>
 パスワード：123qwe<br>
 
 # 利用方法
