@@ -1,0 +1,60 @@
+<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      登録情報入力
+    </h1>
+  </div>
+
+  <%# <%= render 'shared/error_messages', model: f.object %>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">学校名</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_area :school, class:"input-default", id:"school-name", placeholder:"学校名" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">学年</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"select-box", id:"user-grade"}) %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">クラス</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:class_num_id, ClassNum.all, :id, :name, {}, {class:"select-box", id:"user-class"}) %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">番号</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:number_id, Number.all, :id, :name, {}, {class:"select-box", id:"user-number"}) %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">名前(全角)</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_area :name, class:"input-default", id:"user-name", placeholder:"名前" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='register-btn'>
+      <%= devise_error_messages! %>
+      <%= f.submit "会員登録" ,class:"register-red-btn" %>
+    </div>
+  </div>
+<% end %>
