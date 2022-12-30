@@ -34,52 +34,61 @@
         </div>
       <% end %>
 
-      <h2 class="page-heading">
-        <%= "#{@user.name}さんの投稿一覧"%>
-      </h2>
-
-      <div class="user__card">
-        <div class="user-book-field">
-          <% @books.each do |book| %>
-            <div class="user-book-item">
-              <%= link_to book_path(book.id) do %>
-                <div class="detail-book">
-                  <% if book.image.present? %>
-                    <%= image_tag book.image, class:"detail-book-img" %>
-                  <% else %>
-                    <%= image_tag "book_image.png", class:"book-img" %>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
+      <div class="user-post-like">
+        <h2 class="page-heading-title" id="user_book_field">
+          <%= "投稿一覧" %>
+        </h2>
+        <h2 class="page-heading-title" id="user_like_field">
+          <%= "いいね一覧"%>
+        </h2>
       </div>
 
-      <% if user_signed_in? && current_user.id == @user.id %>
-        <h2 class="page-heading">
-          <%= "#{@user.name}さんのいいね一覧"%>
-        </h2>
 
-        <div class="user-like">
-          <% if @likes.present? %>
+        <div class="user-posts">
+          <div class="user__card hidden" id="user_card">
             <div class="user-book-field">
-              <% @likes.each do |like| %>
-                <% book = like.book %>
+              <% @books.each do |book| %>
                 <div class="user-book-item">
                   <%= link_to book_path(book.id) do %>
-                  <div class="detail-book">
-                    <% if book.image.present? %>
-                      <%= image_tag book.image, class:"detail-book-img" %>
-                    <% end %>
-                  </div>
+                    <div class="detail-book">
+                      <% if book.image.present? %>
+                        <%= image_tag book.image, class:"detail-book-img" %>
+                      <% else %>
+                        <%= image_tag "book_image.png", class:"detail-book-img" %>
+                      <% end %>
+                    </div>
                   <% end %>
                 </div>
               <% end %>
             </div>
-          <% end %>
+          </div>
         </div>
-      <% end %>
+
+        <div class="user-likes">
+          <div class="user__card hidden" id="user_likes">
+            <% if @likes.present? %>
+              <div class="user-book-field">
+                <% @likes.each do |like| %>
+                  <% book = like.book %>
+                  <div class="user-book-item">
+                    <%= link_to book_path(book.id) do %>
+                    <div class="detail-book">
+                      <% if book.image.present? %>
+                        <%= image_tag book.image, class:"detail-book-img" %>
+                      <% else %>
+                        <%= image_tag "book_image.png", class:"detail-book-img" %>
+                      <% end %>
+                    </div>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+            <% else %>
+              <p class="non-like">いいねをしている投稿はありません</p>
+            <% end %>
+          </div>
+        </div>
+
 
     </div>
   </div>

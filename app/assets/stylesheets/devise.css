@@ -168,6 +168,7 @@
   margin: 20px 0;
 }
 
+
 .show-btn{
   display: flex;
   justify-content: center;
@@ -209,11 +210,14 @@
   align-items: center;
 }
 
+.hidden{
+  display: none;
+}
+
 .user-book-field{
   display: flex;
-  margin: 0 auto;
   flex-wrap: wrap;
-}
+justify-content: center;}
 
 .user-book-item{
   margin: 0 15px;
@@ -224,4 +228,34 @@
   margin: 0 auto;
 }
 
+.user-post-like{
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  width: 65%;
+  margin: 20px auto 0 auto;
+}
+
+.user-posts{
+  background-color: #fff;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.user-likes{
+  background-color: #fff;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.page-heading-title{
+  padding: 10px 80px;
+}
+.page-heading-title:hover{
+  background-color: #FAFAFA;
+}
+
+.non-like{
+  margin: 20px auto;
+}
 /* ユーザー詳細ページ */

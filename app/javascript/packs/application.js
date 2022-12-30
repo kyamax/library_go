@@ -11,8 +11,9 @@ require("channels")
 require("jquery")
 //= require jquery
 //= require rails-ujs
-// require("../search")
 //= require_tree .
+
+import "./book" 
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
