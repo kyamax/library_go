@@ -173,7 +173,7 @@ body{
 
 .book-user{
   padding-bottom: 10px;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .book_user_name:hover{
@@ -207,7 +207,7 @@ body{
 
 /* 本の詳細ページ */
 .detail-post{
-  width: 1000px;
+  width: 70%;
   margin: 0 auto;
   padding: 15px 30px;
   background-color: #ffffff ;
@@ -277,6 +277,11 @@ body{
 .book-text{
   font-size: 16px;
   margin-bottom: 10px;
+}
+
+.comment_user{
+  font-size: 14px;
+  color: #6a7b5e;
 }
 
 .book__comments{

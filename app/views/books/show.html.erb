@@ -54,29 +54,9 @@
       <% end %>
     </div>
   </div>
+
   <div class="book__comments">
-    <ul class="comments_lists">
-      <% @comments.each do |comment| %>
-        <li class="comments_list">
-          <%= comment.content %>
-          <%= link_to "（#{comment.user.name}）", user_path(comment.user), class: :comment_user %>
-          <%= link_to "削除", book_comment_path(comment.id), method: :delete, class: :comment_delete %>
-        </li>
-      <% end %>
-    </ul>
-    <% if user_signed_in? || admin_signed_in? %>
-      <div class="comment-field">
-        <%= form_with(model: [@book, @comment], local: true) do |f| %>
-          <div class="field">
-            <%= f.label :content, "コメント" %> <br />
-            <%= f.text_field :content, id:"comment_content" %>
-          </div>
-          <div class="actions">
-            <%= f.submit "送信する", class: :form__btn  %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+    <%= render "shared/comment" %>
   </div>
 </div>
 
