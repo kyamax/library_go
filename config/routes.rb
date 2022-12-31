@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   end
   resources :recommends, only: :index
   resources :users, only: [:show, :edit]
-  resources :admins, only: [:index, :show, :edit] do
+  resources :admins, only: [:index, :show, :edit, :destroy] do
     collection do
       get 'search'
     end
