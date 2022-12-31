@@ -7,11 +7,11 @@ window.addEventListener('load', function(){
   const userLikes = document.getElementById("user_likes");
 
   // ユーザー投稿
+  // userCard.setAttribute("style", "display:flex;");
+  // userBookField.setAttribute("style", "border-bottom: #999 solid 3px;", "padding-bottom: 3px;");
+  
   userBookField.addEventListener('click', function(){
-    if (userCard.getAttribute("style") == "display:flex;"){
-      userCard.removeAttribute("style");
-      userBookField.removeAttribute("style", "border-bottom: #999 solid 3px;", "padding-bottom: 3px;");
-    } else if (userLikeField.addEventListener('click', function(){
+    if (userLikeField.addEventListener('click', function(){
       userCard.removeAttribute("style");
       userBookField.removeAttribute("style", "border-bottom: #999 solid 3px;", "padding-bottom: 3px;");
     })){
@@ -23,10 +23,7 @@ window.addEventListener('load', function(){
 
   // ユーザーいいね
   userLikeField.addEventListener('click', function(){
-    if (userLikes.getAttribute("style") == "display:flex;"){
-      userLikes.removeAttribute("style")
-      userLikeField.removeAttribute("style", "border-bottom: #999 solid 3px;", "padding-bottom: 3px;");
-    } else if (userBookField.addEventListener('click', function(){
+    if (userBookField.addEventListener('click', function(){
       userLikes.removeAttribute("style")
       userLikeField.removeAttribute("style", "border-bottom: #999 solid 3px;", "padding-bottom: 3px;");
     })){

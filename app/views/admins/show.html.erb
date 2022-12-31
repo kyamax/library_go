@@ -31,52 +31,7 @@
         </div>
       <% end %>
 
-      <h2 class="page-heading">
-        <%= "#{@admin.name}さんの投稿一覧"%>
-      </h2>
-
-      <div class="user__card">
-        <div class="user-book-field">
-          <% @books.each do |book| %>
-            <div class="user-book-item">
-              <%= link_to book_path(book.id) do %>
-                <div class="detail-book">
-                  <% if book.image.present? %>
-                    <%= image_tag book.image, class:"detail-book-img" %>
-                  <% else %>
-                    <%= image_tag "book_image.png", class:"book-img" %>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-
-      <% if admin_signed_in? && current_admin.id == @admin.id %>
-        <h2 class="page-heading">
-          <%= "#{@admin.name}さんのいいね一覧"%>
-        </h2>
-
-        <div class="user-like">
-          <% if @likes.present? %>
-            <div class="user-book-field">
-              <% @likes.each do |like| %>
-                <% book = like.book %>
-                <div class="user-book-item">
-                  <%= link_to book_path(book.id) do %>
-                  <div class="detail-book">
-                    <% if book.image.present? %>
-                      <%= image_tag book.image, class:"detail-book-img" %>
-                    <% end %>
-                  </div>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+      <%= render "shared/show_like"%>
 
     </div>
   </div>

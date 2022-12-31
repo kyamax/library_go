@@ -206,7 +206,7 @@
 .user__card {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -217,7 +217,8 @@
 .user-book-field{
   display: flex;
   flex-wrap: wrap;
-justify-content: center;}
+  justify-content: center;
+}
 
 .user-book-item{
   margin: 0 15px;
