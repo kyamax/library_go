@@ -2,7 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create, :destroy]
-  before_action :configure_account_update_params, only: [:update]
+  before_action :configure_account_update_params, only: [:edit, :update]
 
   # GET /resource/sign_up
   # def new
@@ -26,8 +26,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # DELETE /resource
   # def destroy
-      # user = User.find(params[:id])
-      # user.destroy
   #   super
   # end
 

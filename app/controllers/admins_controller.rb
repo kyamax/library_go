@@ -20,8 +20,11 @@ class AdminsController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    flash[:success] = "ユーザー削除完了"
     redirect_to search_admins_path
+  end
+
+  def edit
+    @user = User.find(patams[:id])
   end
 
 end
