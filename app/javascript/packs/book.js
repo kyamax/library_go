@@ -13,11 +13,11 @@ window.addEventListener('load', function(){
   userBookField.addEventListener('click', function(){
     if (userLikeField.addEventListener('click', function(){
       userCard.removeAttribute("style");
-      userBookField.removeAttribute("style", "border-bottom: #999 solid 3px;", "padding-bottom: 3px;");
+      userBookField.removeAttribute("style", "border-bottom: #6a7b5e solid 3px;", "padding-bottom: 3px;");
     })){
     } else {
       userCard.setAttribute("style", "display:flex;");
-      userBookField.setAttribute("style", "border-bottom: #999 solid 3px;", "padding-bottom: 3px;");
+      userBookField.setAttribute("style", "border-bottom: #6a7b5e solid 3px;", "padding-bottom: 3px;");
     };
   });
 
@@ -25,11 +25,11 @@ window.addEventListener('load', function(){
   userLikeField.addEventListener('click', function(){
     if (userBookField.addEventListener('click', function(){
       userLikes.removeAttribute("style")
-      userLikeField.removeAttribute("style", "border-bottom: #999 solid 3px;", "padding-bottom: 3px;");
+      userLikeField.removeAttribute("style", "border-bottom: #6a7b5e solid 3px;", "padding-bottom: 3px;");
     })){
     } else {
       userLikes.setAttribute("style", "display:flex;");
-      userLikeField.setAttribute("style", "border-bottom: #999 solid 3px;", "padding-bottom: 3px;");
+      userLikeField.setAttribute("style", "border-bottom: #6a7b5e solid 3px;", "padding-bottom: 3px;");
     }
   });
 
