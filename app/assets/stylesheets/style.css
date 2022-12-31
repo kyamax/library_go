@@ -125,7 +125,7 @@ a {
 }
 
 .timeline_btn:hover{
-  border-bottom: solid 3px #999;
+  border-bottom: solid 3px #6a7b5e;
   padding-bottom: 5px;
 }
 
@@ -227,6 +227,7 @@ body{
 .detail_nav__btn:hover{
   color: #ffffff;
   background: #6a7b5e;
+  border: 1px #6a7b5e solid;
 }
 
 .book-user{

@@ -6,10 +6,7 @@ window.addEventListener('load', function(){
   const userLikeField = document.getElementById("user_like_field");
   const userLikes = document.getElementById("user_likes");
 
-  // ユーザー投稿
-  // userCard.setAttribute("style", "display:flex;");
-  // userBookField.setAttribute("style", "border-bottom: #999 solid 3px;", "padding-bottom: 3px;");
-  
+  // ユーザー投稿  
   userBookField.addEventListener('click', function(){
     if (userLikeField.addEventListener('click', function(){
       userCard.removeAttribute("style");
