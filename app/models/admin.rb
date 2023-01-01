@@ -8,7 +8,7 @@ class Admin < ApplicationRecord
   validates :name, presence: true
   validates :employee_id, presence: true, numericality: {only_integer: true}
 
-  has_many :books
+  has_many :books, dependent: :destroy
   has_many :schools
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy

@@ -16,8 +16,14 @@ class CommentsController < ApplicationController
     redirect_to book_path(@comment.book_id)
   end
 
-private
+  private
+
   def comment_params
-    params.require(:comment).permit(:content).merge(user_id: current_user.id, book_id: params[:book_id])
+    if user_signed_in?
+      params.require(:comment).permit(:content).merge(user_id: current_user.id, book_id: params[:book_id])
+    elsif admin_signed_in?
+      params.require(:comment).permit(:content).merge(admin_id: current_admin.id, book_id: params[:book_id])
+    end
   end
+
 end

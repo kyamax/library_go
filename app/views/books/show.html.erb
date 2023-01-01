@@ -45,12 +45,12 @@
 
       <% if user_signed_in? && current_user.id == @book.user_id %>
         <%= link_to "編集", edit_book_path(@book.id), class: :detail_nav__btn %>
-        <%= link_to "削除", book_path(@book.id), method: :delete, class: :detail_nav__btn %>
+        <%= link_to "削除", book_path(@book.id), method: :delete, data: { confirm: '投稿が完全に削除されます。よろしいでしょうか。'}, class: :detail_nav__btn %>
       <% elsif admin_signed_in? && current_admin.id == @book.admin_id %>
         <%= link_to "編集", edit_book_path(@book.id), class: :detail_nav__btn %>
-        <%= link_to "削除", book_path(@book.id), method: :delete, class: :detail_nav__btn %>
+        <%= link_to "削除", book_path(@book.id), method: :delete, data: { confirm: '投稿が完全に削除されます。よろしいでしょうか。'}, class: :detail_nav__btn %>
       <% elsif admin_signed_in? && current_admin.id %>
-        <%= link_to "削除", book_path(@book.id), method: :delete, class: :detail_nav__btn %>
+        <%= link_to "削除", book_path(@book.id), method: :delete, data: { confirm: '投稿が完全に削除されます。よろしいでしょうか。'}, class: :detail_nav__btn %>
       <% end %>
     </div>
   </div>
