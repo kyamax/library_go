@@ -11,10 +11,6 @@ class Book < ApplicationRecord
   validates :book_name, presence: true
   validates :genre_id, numericality: { other_than: 1, message: "can't be blank" }
 
-  # def liked_by?(user)
-  #   likes.where(user_id: user.id).or(likes.where(admin_id: user.id)).exists?
-  # end
-
   def user_liked_by?(user)
     likes.where(user_id: user.id).exists?
   end
@@ -22,15 +18,5 @@ class Book < ApplicationRecord
   def admin_liked_by?(admin)
     likes.where(admin_id: admin.id).exists?
   end
-
-  # def self.search(search)
-  #   if search != ""
-  #     Book.where('book_name LIKE(?)', "%#{search}%")
-  #     User.where(grade_id: search[:grade_id])
-  #     # User.where('opponent LIKE(?)', "%#{search[:keyword]}%").where(grade_id: search[:grade])
-  #   else
-  #     Book.order('created_at DESC')
-  #   end
-  # end
 
 end

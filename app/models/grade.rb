@@ -7,7 +7,6 @@ class Grade < ActiveHash::Base
     { id: 5, name: '4' },
     { id: 6, name: '5' },
     { id: 7, name: '6' },
-    # { id: 8, name: '先生' }
   ]
 
   include ActiveHash::Associations
