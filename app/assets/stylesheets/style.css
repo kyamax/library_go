@@ -38,7 +38,6 @@ a {
 /* ヘッダーcss */
 .top-page-header {
   background-color: #6a7b5e;
-  /* margin-bottom: 48px; */
   padding: 20px 20px;
 }
 .header{
@@ -81,11 +80,6 @@ a {
 .start-page{
   position: relative;
 }
-/* .top-text{
-  position: absolute;
-  top: 25px;
-  left: 25px;
-} */
 
 .greeting{
   position: absolute;
@@ -139,7 +133,7 @@ body{
 
 /* 本の一覧 */
 .book-wrapper{
-  width: 50%;
+  width: 55%;
   /* background-color: white; */
   padding-bottom: 70px;
   margin: 0 auto;
@@ -148,10 +142,10 @@ body{
 .book-field {
   width: 100%;
   /* margin: 0 auto; */
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* flex-wrap: wrap; */
+  /* align-items: center; */
   /* min-height: calc(100vh - 161px); */
 }
 
@@ -181,8 +175,8 @@ body{
 }
 
 .book-img{
-  width: 28vh;
-  height: 33vh;
+  width: 15vw;
+  height: 38vh;
   margin: 10px 0 10px 0;
 }
 .book-author {
@@ -193,7 +187,7 @@ body{
   font-size: 20px;
   margin: 15px 0 8px 0;
   font-weight: bold;
-  width: 250px;
+  width: 100%;
 }
 .book-publisher {
   font-size: 16px;
@@ -249,8 +243,8 @@ body{
 }
 
 .detail-book-img{
-  width: 28vh;
-  height: 35vh;
+  width: 15vw;
+  height: 38vh;
   margin: 10px 0 10px 0;
 }
 .detail-book-author {
@@ -261,7 +255,7 @@ body{
   font-size: 24px;
   margin: 20px 0 8px 0;
   font-weight: bold;
-  width: 400px;
+  width: 100%;
 }
 .detail-book-publisher {
   font-size: 16px;
@@ -358,3 +352,27 @@ body{
 }
 
 /* 本の投稿 */
+
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .inner {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .book_image{
+    width: 60%;
+  }
+}
+
+ /* スマホ表示 */
+@media (max-width: 599px) {
+  .inner {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .book_image{
+    width: 15vw;
+    height: 15vh;
+  }
+
+}
