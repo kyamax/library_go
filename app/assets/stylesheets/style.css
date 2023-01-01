@@ -319,8 +319,7 @@ body{
 }
 
 .field{
-  margin: 30px 0 ;
-  height: 50px;
+  margin: 20px 0 ;
 }
 
 .field label{
@@ -333,7 +332,7 @@ body{
 }
 
 .form__text_area{
-  height: 50px;
+  height: 100px;
   width: 300px;
   margin-bottom: 20px;
 }
@@ -352,6 +351,10 @@ body{
 
 .form__btn:hover {
   cursor: pointer;
+}
+
+.actions{
+  margin-bottom: 50px;
 }
 
 /* 本の投稿 */
