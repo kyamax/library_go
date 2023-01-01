@@ -1,0 +1,34 @@
+
+.comment_user{
+  font-size: 14px;
+  color: #6a7b5e;
+}
+
+.comment-content{
+  width: 200px;
+  height: 30px;
+}
+
+.book__comments{
+  margin: 0 20px;
+}
+
+.comments_lists{
+  margin-top: 20px;
+}
+
+.comments_list{
+  margin-bottom: 10px;
+}
+
+.comment-field{
+  display: flex;
+}
+
+.comment_delete{
+  font-size: 14px;
+}
+
+.comment-content-label{
+  font-size: 16px;
+}

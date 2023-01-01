@@ -1,4 +1,4 @@
-
+<h3><i class="fa-regular fa-comments"></i> コメント</h3>
 <ul class="comments_lists">
   <% @comments.each do |comment| %>
     <li class="comments_list">
@@ -10,7 +10,7 @@
       <% end %>
       <% if user_signed_in? && current_user.id == comment.user_id || admin_signed_in? %>
         <%= link_to book_comment_path(comment.id), method: :delete, data: { confirm: 'コメントが完全に削除されます。よろしいでしょうか。'}, class: :comment_delete do %>
-          <i class="fa-regular fa-trash-can"></i>
+          <i class="fa-regular fa-trash-can" style="color: #999999;"></i>
         <% end %>
       <% end %>
     </li>
@@ -21,7 +21,7 @@
   <div class="comment-field">
     <%= form_with(model: [@book, @comment], local: true) do |f| %>
       <div class="field">
-        <%= f.label :content, "コメント" %> <br />
+        <p class="comment-content-label">コメントを送る</p>
         <%= f.text_field :content, placeholder: "140字以内で入力してください", class: "comment-content", id:"comment_content" %>
       </div>
       <div class="actions">

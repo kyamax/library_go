@@ -1,7 +1,7 @@
 
 </div> 
 <div class="detail-post">
-  <div class="book-user">
+  <div class="detail-book-user">
     <% if @book.user.present? %>
       <%= link_to @book.user.name, user_path(@book.user) %>
     <% elsif @book.admin.present? %>

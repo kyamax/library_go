@@ -1,5 +1,5 @@
 <div class='search'>
-  <h1 class='title'>本の検索</h1>
+  <h1 class='title'><i class="fa-solid fa-magnifying-glass"></i> 本を探そう！</h1>
   <%= search_form_for @q, url: search_books_path, class: :search_form, html: {id: "detailed-search-form"} do |f| %>
     <div class="search-field">
       <%= f.label :book_name_cont, '本の名前' %>
