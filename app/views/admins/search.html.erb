@@ -9,18 +9,16 @@
       <th>番号</th>
       <th>名前</th>
       <th>マイページ</th>
-      <th>情報編集</th>
       <th>削除</th>
     </tr>
     <% @users.each do |user| %>
       <tr class="list-detail">
-        <td><%= user.school %></td>
+        <td><%= user.school.name %></td>
         <td><%= user.grade.name %></td>
         <td><%= user.class_num.name %></td>
         <td><%= user.number.name %></td>
         <td><%= user.name %></td>
         <td><%= link_to "詳細", user_path(user.id) %></td>
-        <td><%= link_to "編集", edit_user_registration_path(user.id) %></td>
         <td><%= link_to "削除", admin_path(user.id), data: { confirm: '登録情報が完全に削除されます。よろしいでしょうか。'}, method: :delete %></td>
       </tr>
     <% end %>

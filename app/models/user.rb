@@ -9,6 +9,7 @@ class User < ApplicationRecord
   belongs_to :grade
   belongs_to :class_num
   belongs_to :number
+  belongs_to :school
 
   validates :grade_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :class_num_id, numericality: { other_than: 1, message: "can't be blank" }
@@ -16,7 +17,6 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   has_many :books, dependent: :destroy
-  has_many :schools
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_books, through: :likes, source: :book
