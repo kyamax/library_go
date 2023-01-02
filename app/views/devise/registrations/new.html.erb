@@ -13,7 +13,7 @@
       <span class="indispensable">必須</span>
     </div>
     <div class='input-name-wrap'>
-      <%= f.text_area :school, class:"input-default", id:"school-name", placeholder:"学校名" %>
+      <%= f.collection_select(:school_id, School.all, :id, :name, {:include_blank => true}, {class:"input-default"}) %>
     </div>
   </div>
 
