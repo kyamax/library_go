@@ -6,29 +6,29 @@
       </h1>
     </div>
 
-    <div class="form-group">
+    <%# <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">都道府県</label>
         <span class="indispensable">必須</span>
       </div>
       <%= f.select :prefecture_id, nil, {}, {'v-model': 'selectedPref', '@change': 'getCities(selectedPref)'} do %>
-        <option v-for="prefecture in prefectures" :key="prefecture.name" :value="prefecture.id">
+        <%# <option v-for="prefecture in prefectures" :key="prefecture.name" :value="prefecture.id">
           {{prefecture.name}}
         </option>
       <% end %>
-    </div>
+    <%# </div> %>
 
-    <div class="form-group">
+    <%# <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">市区町村</label>
         <span class="indispensable">必須</span>
       </div>
       <%= f.select :city_id do %>
-        <option v-for="city in cities" :key="city.name" :value="city.id">
+        <%# <option v-for="city in cities" :key="city.name" :value="city.id">
           {{city.name}}
         </option>
       <% end %>
-    </div>
+    <%# </div> %>
 
     <div class="form-group">
       <div class='form-text-wrap'>
@@ -48,4 +48,4 @@
   </div>
 <% end %>
 
-<%= javascript_pack_tag 'hello_vue' %>
+<%# <%= javascript_pack_tag 'hello_vue' %> 
