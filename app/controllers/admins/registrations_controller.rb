@@ -42,12 +42,12 @@ class Admins::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:school, :name, :employee_id])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:school_id, :name, :employee_id])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:school, :name, :employee_id])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:school_id, :name, :employee_id])
   end
 
   def update_resource(resource, params)

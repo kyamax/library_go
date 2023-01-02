@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_01_023628) do
+ActiveRecord::Schema.define(version: 2023_01_02_010028) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2023_01_01_023628) do
   end
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "school", null: false
+    t.integer "school_id", null: false
     t.integer "employee_id", null: false
     t.string "name", null: false
     t.string "email", default: ""
@@ -102,8 +102,8 @@ ActiveRecord::Schema.define(version: 2023_01_01_023628) do
 
   create_table "schools", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.bigint "prefecture_id", null: false
-    t.bigint "city_id", null: false
+    t.bigint "prefecture_id"
+    t.bigint "city_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["city_id"], name: "index_schools_on_city_id"
