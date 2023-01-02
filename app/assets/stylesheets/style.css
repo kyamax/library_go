@@ -278,6 +278,7 @@ body{
   min-height: calc(100vh - 161px);
   display: block;
   text-align: center;
+  position: relative;
 }
 
 .field{
@@ -320,6 +321,13 @@ body{
 }
 
 /* 本の投稿 */
+
+.character{
+  position: absolute;
+  bottom: 5%;
+  right: 8%;
+  width: 20vw;
+}
 
 /* タブレット対応 */
 @media (max-width: 1024px) {
