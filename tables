@@ -1,0 +1,83 @@
+
+
+# 各種テーブル図
+## usersテーブル(devise)
+|column            |type   |option     |
+|------------------|-------|-----------|
+|school_id         |integer|null: false|
+|grade_id          |integer|null: false|
+|class_id          |integer|null: false|
+|number_id         |integer|null: false|
+|name              |string |null: false|
+|encrypted_password|string |null: false|
+
+### Association
+has_many :books<br>
+has_many :likes<br>
+
+---
+
+## adminsテーブル(devise)
+|column            |type   |option     |
+|------------------|-------|-----------|
+|school_id         |integer|null: false|
+|employee_id       |integer|null: false|
+|name              |string |null: false|
+|encrypted_password|string |null: false|
+
+### Association
+has_many :books<br>
+has_many :likes<br>
+
+---
+
+## booksテーブル
+|column            |type       |option                        |
+|------------------|-----------|------------------------------|
+|book_name         |string     |null: false                   | 
+|author            |string     |null: false                   |
+|publisher         |string     |                              |
+|text              |text       |                              |
+|user              |references |null: false, foreign_key: true|
+|genre_id          |integer    |null: false                   |
+
+### Association
+belongs_to :user<br>
+belongs_to :admin<br>
+has_many :likes<br>
+
+---
+
+## commentsテーブル
+|column            |type       |option                        |
+|------------------|-----------|------------------------------|
+|content           |text       |null: false                   |
+|user              |references |null: false, foreign_key: true|
+|book              |references |null: false, foreign_key: true|
+
+### Association
+belongs_to :user<br>
+belongs_to :book<br>
+
+---
+
+## likesテーブル
+|column            |type       |option                        |
+|------------------|-----------|------------------------------|
+|user              |references |null: false, foreign_key: true|
+|book              |references |null: false, foreign_key: true|
+
+### Association
+belongs_to :user<br>
+belongs_to :admin<br>
+belongs_to :book<br>
+
+---
+
+## genresテーブル
+|column            |type       |option                        |
+|------------------|-----------|------------------------------|
+|genre             |integer    |null: false                   |
+
+### Association
+belongs_to :book<br>
