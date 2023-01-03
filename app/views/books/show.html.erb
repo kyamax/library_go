@@ -35,7 +35,7 @@
       </div>
       
       <% if user_signed_in? || admin_signed_in? %>
-        <div id="like_buttons_<%= @book.id %>">
+        <div id="like_link_<%= @book.id %>">
           <%= render partial: "likes/like", locals: { book: @book } %>
         </div>
       <% end %>
