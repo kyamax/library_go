@@ -72,6 +72,9 @@ https://docs.google.com/spreadsheets/d/1GdVTthVhNDcZ6dBf6pq6gxhJRudcDBzzxS9WgXnu
 [![Image from Gyazo](https://i.gyazo.com/6ae0ef893189b231394d958d621be2eb.png)](https://gyazo.com/6ae0ef893189b231394d958d621be2eb)
 
 # 開発環境
+- フレームワーク:Rails,Jquery 
+- インフラ:AWS(EC2) 
+- データベース:MariaDB 
 
 # ローカルでの動作方法
 以下のコマンドを順に実行<br>
