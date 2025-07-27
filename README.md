@@ -82,6 +82,9 @@ https://docs.google.com/spreadsheets/d/1GdVTthVhNDcZ6dBf6pq6gxhJRudcDBzzxS9WgXnu
 % cd library_go<br>
 % bundle install<br>
 % yarn install<br>
+% rails db:create (必要であれば)<br>
+% rails db:migrate (必要であれば)<br>
+% rails s<br>
 
 # 工夫したポイント
 ## 制作背景
